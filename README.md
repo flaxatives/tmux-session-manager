@@ -6,16 +6,16 @@ bindings.
 # Prerequisites
 -   Python 2.x
 -   tmux
--   urwid
+-   urwid 1.1.x
 
 # Usage
 Run the script and there will be a menu showing your acive sessions and the
-active clients. Navigate using j,k or ↑,↓ and press <Enter> to attach to that
+active clients. Navigate using j,k or ↑,↓ and press Enter to attach to that
 session.
 
 ## Keybinds
--   j,k         move up, move down
--   ↑,↓         move up, move down
+-   j,k         move down, move up
+-   ↑,↓         move down, move up
 -   Enter       attach to session
 -   dd          kill session
 -   x           detach client
