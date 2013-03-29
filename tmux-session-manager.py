@@ -10,6 +10,7 @@ server.
 # so far it's really hacked together just to get something usable up
 # right now, it just lets you choose a session
 # TODO most everything else
+# TODO sometimes it goes to a bash prompt while still in tmux
 
 import os, subprocess
 import urwid
@@ -32,8 +33,7 @@ def menu(title, sessions):
 def item_chosen(button, session):
     # do tmux commands
     sNum = session.split(':')[0]
-    args = ['tmux', 'attach', '-t', '0']
-    subprocess.call(args)
+    args = ['tmux', 'attach', '-t', sNum]
 
     raise urwid.ExitMainLoop()      # exit program
         
@@ -46,3 +46,5 @@ top = urwid.Overlay(main, urwid.SolidFill(u'\N{MEDIUM SHADE}'),
     min_width=20, min_height=9)
 
 urwid.MainLoop(top, palette=[('reversed', 'standout', '')]).run()
+
+subprocess.call(args)
